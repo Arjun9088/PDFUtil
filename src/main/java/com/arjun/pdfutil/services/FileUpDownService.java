@@ -9,7 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public interface FileUpDownService 
 {
-	public ResponseEntity<String> fileUploadService(MultipartFile file) throws IOException;
-	public ResponseEntity<Resource>  fileDownloadService(String filename) throws MalformedURLException;
+	ResponseEntity<String> fileUploadService(MultipartFile file) throws IOException;
+	ResponseEntity<Resource>  fileDownloadService(String filename) throws MalformedURLException;
 	
 }

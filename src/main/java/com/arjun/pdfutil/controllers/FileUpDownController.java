@@ -37,7 +37,7 @@ public class FileUpDownController {
 			RedirectAttributes redirectAttributes) {
 		if (file.isEmpty()) {
 
-//			return new ResponseEntity<String>("Please Upload a file and try again.", HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<String>("Please Upload a file and try again.", HttpStatus.BAD_REQUEST);
 		}
 
 		try {
@@ -55,5 +55,6 @@ public class FileUpDownController {
 		
 		return fileUpDownService.fileDownloadService(filename);
 	}
+	
 	
 }

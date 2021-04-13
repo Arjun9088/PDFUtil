@@ -29,4 +29,23 @@ public class ExtractionOperationsController
 	{
 		return new ResponseEntity<String[]>(pdfTextService.extractTextFromPdf(filename),HttpStatus.OK);
 	}
+
+	@GetMapping("/extractTable/{filename:.+}")
+	public ResponseEntity<String> getPDFTables(@PathVariable String filename)
+	{
+		return new ResponseEntity<String>(pdfTextService.extractTables(filename),HttpStatus.OK);
+	}
+
+	@GetMapping("extractAll/{filename:.+}")
+	public ResponseEntity<String> extract(@PathVariable String filename, @PathVariable String code)
+	{
+		String [] pdfText  = pdfTextService.extractTextFromPdf(filename);
+		return new ResponseEntity<String>("GOod",HttpStatus.OK);
+	}
+	
+	@GetMapping("extractImages/{filename:.+}")
+	public ResponseEntity<String> extractImages(@PathVariable String filename)
+	{
+		return new ResponseEntity<String>(pdfTextService.extractImages(filename), HttpStatus.OK);
+	}
 }
